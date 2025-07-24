@@ -1,91 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Feliz 19 Jessy 💖</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para mi Chinita Jessy 🐱❤️</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
       height: 100%;
-      background: linear-gradient(to top, #ffccd5, #ffeaf0, #fff);
+      overflow: hidden;
+      background: linear-gradient(to top, #fff0f5, #ffe0e0);
       font-family: 'Segoe UI', sans-serif;
     }
-
+    .heart, .cat {
+      position: absolute;
+      opacity: 0.8;
+      z-index: 1;
+    }
     .heart {
-      position: absolute;
-      color: red;
-      font-size: 24px;
+      color: #ff2d55;
+      font-size: 20px;
       animation: floatUp linear infinite;
-      opacity: 0.7;
     }
-
+    .cat {
+      width: 50px;
+      animation: floatCat linear infinite;
+    }
     @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.5);
-        opacity: 0;
-      }
+      0% { transform: translateY(100vh) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
     }
-
-    .message-container {
+    @keyframes floatCat {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+    }
+    .text-container {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      bottom: -100%;
+      width: 100%;
       text-align: center;
-      animation: fadeIn 3s ease-in-out forwards;
-      opacity: 0;
+      padding: 20px;
+      color: #333;
+      font-size: 1.6em;
+      line-height: 2em;
+      animation: scrollText 90s linear forwards;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: 500;
+      text-shadow: 1px 1px 3px rgba(255, 192, 203, 0.7);
     }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translate(-50%, -60%) scale(0.9); }
-      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    @keyframes scrollText {
+      0% { bottom: -100%; }
+      100% { bottom: 110%; }
     }
-
-    .message-container h1 {
-      font-size: 3em;
+    .final-message {
+      font-size: 2.5em;
+      font-weight: bold;
       color: #e91e63;
-      margin-bottom: 0.3em;
+      margin-top: 60px;
+      text-shadow: 2px 2px 5px #ff4f94;
     }
-
-    .message-container p {
-      color: #444;
-      font-size: 1.2em;
-      line-height: 1.5em;
+    /* Para ocultar controles del iframe */
+    iframe {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1000;
     }
   </style>
 </head>
 <body>
-  <div class="message-container">
-    <h1>🎂 Feliz 19 cumpleaños, Jessy 💖</h1>
-    <p>Desde que te conocí con solo 14, supe que eras diferente.</p>
-    <p>El tiempo, la vida, las vueltas del destino…</p>
-    <p>nos alejaron, pero tú sigues siendo una parte hermosa de mi historia.</p>
-    <p>Gracias por existir. 🌠</p>
+
+  <div class="text-container">
+    <p>Feliz 19 cumpleaños, mi Chinita hermosa 🎂❤️🌹</p>
+    <p>Aunque la distancia nos separe y el tiempo sea frío, mi amor por ti arde como mil soles ☀️🔥.</p>
+    <p>Desde que llegaste a mi vida con solo 14 años, cambiaste todo para mejor. Eres esa luz que nunca se apaga ✨.</p>
+    <p>Cada risa tuya, cada palabra, cada mirada, quedó grabada en mi alma como la melodía más dulce 🎶💖.</p>
+    <p>Y aunque el camino no siempre fue fácil, tú y yo hemos resistido tormentas y seguimos firmes, como dos almas destinadas a encontrarse 🌈🌙.</p>
+    <p>Extraño abrazarte y perderme en tus ojos llenos de estrellas ⭐️, extrañar tus susurros que calman mi tormenta interna 🌬️💞.</p>
+    <p>Quisiera ser el motivo de tu sonrisa diaria, el refugio donde siempre encuentres paz y cariño 🏡💓.</p>
+    <p>Mi corazón no entiende de kilómetros, porque late por ti sin importar la distancia 🌍💘.</p>
+    <p>Gracias por ser esa persona que, sin buscarlo, conquistó mi vida entera. Gracias por cada recuerdo, cada sueño compartido, cada instante vivido contigo 🌸🙏.</p>
+    <p>Hoy celebro tu vida, tu alma maravillosa, esa que ilumina mis días y calma mis noches oscuras 🌟🌙.</p>
+    <p>Mi Chinita hermosa, que este año sea el inicio de todo lo bueno que mereces y más 🎉🌺.</p>
+    <p>Te quiero más de lo que las palabras pueden expresar. Te pienso en cada suspiro y te llevo conmigo en cada latido ❤️💫.</p>
+    <p>No importa dónde estemos, porque siempre estaremos juntos en este lazo invisible que nos une para siempre 🔗💕.</p>
+    <p class="final-message">Gracias chinitaaa hermosa, por ser tú, por existir, por ser mi todo. Te amo infinito. ❤️🐱🌹</p>
   </div>
 
   <script>
-    const numHearts = 60;
+    const numHearts = 120;
+    const numCats = 20;
 
     for (let i = 0; i < numHearts; i++) {
       const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.textContent = '❤️';
+      heart.className = 'heart';
+      heart.innerText = '❤️';
       heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (3 + Math.random() * 7) + 's';
-      heart.style.fontSize = (16 + Math.random() * 40) + 'px';
-      heart.style.animationDelay = Math.random() * 5 + 's';
+      heart.style.fontSize = (14 + Math.random() * 36) + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 7) + 's';
+      heart.style.animationDelay = Math.random() * 15 + 's';
       document.body.appendChild(heart);
     }
+
+    const catURLs = [
+      'https://cdn-icons-png.flaticon.com/512/616/616408.png',
+      'https://cdn-icons-png.flaticon.com/512/616/616430.png',
+      'https://cdn-icons-png.flaticon.com/512/616/616408.png'
+    ];
+
+    for (let i = 0; i < numCats; i++) {
+      const cat = document.createElement('img');
+      cat.className = 'cat';
+      cat.src = catURLs[Math.floor(Math.random() * catURLs.length)];
+      cat.style.left = Math.random() * 100 + 'vw';
+      cat.style.animationDuration = (9 + Math.random() * 7) + 's';
+      cat.style.animationDelay = Math.random() * 25 + 's';
+      document.body.appendChild(cat);
+    }
   </script>
+
+  <!-- Música Lana Del Rey - Summertime Sadness en loop, oculto -->
+  <iframe
+    src="https://www.youtube.com/embed/CevxZvSJLk8?autoplay=1&loop=1&playlist=CevxZvSJLk8&controls=0&mute=0&modestbranding=1"
+    frameborder="0"
+    allow="autoplay"
+    allowfullscreen
+  ></iframe>
+
 </body>
 </html>
