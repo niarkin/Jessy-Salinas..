@@ -13,7 +13,7 @@
       background: linear-gradient(to top, #fff0f5, #ffe0e0);
       font-family: 'Segoe UI', sans-serif;
     }
-    .heart, .cat {
+    .heart, .cat, .petal, .lotus {
       position: absolute;
       opacity: 0.8;
       z-index: 1;
@@ -27,6 +27,14 @@
       width: 50px;
       animation: floatCat linear infinite;
     }
+    .petal {
+      width: 25px;
+      animation: fallPetal linear infinite;
+    }
+    .lotus {
+      width: 60px;
+      animation: floatLotus linear infinite;
+    }
     @keyframes floatUp {
       0% { transform: translateY(100vh) scale(1); opacity: 0; }
       10% { opacity: 1; }
@@ -36,6 +44,15 @@
       0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
       10% { opacity: 1; }
       100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+    }
+    @keyframes fallPetal {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+    @keyframes floatLotus {
+      0% { transform: translateY(100vh) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
     }
     .text-container {
       position: absolute;
@@ -66,7 +83,6 @@
       margin-top: 60px;
       text-shadow: 2px 2px 5px #ff4f94;
     }
-    /* Para ocultar controles del iframe */
     iframe {
       position: fixed;
       bottom: 0;
@@ -88,7 +104,7 @@
     <p>Cada risa tuya, cada palabra, cada mirada, quedó grabada en mi alma como la melodía más dulce 🎶💖.</p>
     <p>Y aunque el camino no siempre fue fácil, tú y yo hemos resistido tormentas y seguimos firmes, como dos almas destinadas a encontrarse 🌈🌙.</p>
     <p>Extraño abrazarte y perderme en tus ojos llenos de estrellas ⭐️, extrañar tus susurros que calman mi tormenta interna 🌬️💞.</p>
-    <p>Quisiera ser el motivo de tu sonrisa diaria, el refugio donde siempre encuentres paz y cariño 🏡💓.</p>
+    <p>Quisiera ser el motivo de tu sonrisa diaria, el refugio donde siempre encuentres paz y cariño 🏡💳.</p>
     <p>Mi corazón no entiende de kilómetros, porque late por ti sin importar la distancia 🌍💘.</p>
     <p>Gracias por ser esa persona que, sin buscarlo, conquistó mi vida entera. Gracias por cada recuerdo, cada sueño compartido, cada instante vivido contigo 🌸🙏.</p>
     <p>Hoy celebro tu vida, tu alma maravillosa, esa que ilumina mis días y calma mis noches oscuras 🌟🌙.</p>
@@ -101,6 +117,8 @@
   <script>
     const numHearts = 120;
     const numCats = 20;
+    const numPetals = 50;
+    const numLotus = 5;
 
     for (let i = 0; i < numHearts; i++) {
       const heart = document.createElement('div');
@@ -128,9 +146,28 @@
       cat.style.animationDelay = Math.random() * 25 + 's';
       document.body.appendChild(cat);
     }
+
+    for (let i = 0; i < numPetals; i++) {
+      const petal = document.createElement('img');
+      petal.className = 'petal';
+      petal.src = 'https://cdn-icons-png.flaticon.com/512/415/415733.png';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (10 + Math.random() * 10) + 's';
+      petal.style.animationDelay = Math.random() * 20 + 's';
+      document.body.appendChild(petal);
+    }
+
+    for (let i = 0; i < numLotus; i++) {
+      const lotus = document.createElement('img');
+      lotus.className = 'lotus';
+      lotus.src = 'https://cdn-icons-png.flaticon.com/512/3468/3468499.png';
+      lotus.style.left = Math.random() * 100 + 'vw';
+      lotus.style.animationDuration = (10 + Math.random() * 20) + 's';
+      lotus.style.animationDelay = Math.random() * 30 + 's';
+      document.body.appendChild(lotus);
+    }
   </script>
 
-  <!-- Música Lana Del Rey - Summertime Sadness en loop, oculto -->
   <iframe
     src="https://www.youtube.com/embed/CevxZvSJLk8?autoplay=1&loop=1&playlist=CevxZvSJLk8&controls=0&mute=0&modestbranding=1"
     frameborder="0"
