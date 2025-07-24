@@ -1,136 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Feliz 19 cumpleaños, Jessy 🎂❤️</title>
-<style>
-  /* Fondo oscuro con estrellas */
-  body {
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-    color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
-  }
-  /* Estrellas */
-  .star {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: twinkle 3s infinite ease-in-out alternate;
-  }
-  @keyframes twinkle {
-    from {opacity: 0.2;}
-    to {opacity: 1;}
-  }
-  /* Texto central animado */
-  .message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    animation: floatText 6s ease-in-out infinite;
-    user-select: none;
-  }
-  @keyframes floatText {
-    0%, 100% { transform: translate(-50%, -52%); }
-    50% { transform: translate(-50%, -48%); }
-  }
-  /* Corazones */
-  .heart {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: red;
-    transform: rotate(-45deg);
-    animation: floatUp linear infinite;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 2px #ff5c5c);
-  }
-  .heart::before,
-  .heart::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: red;
-    border-radius: 50%;
-  }
-  .heart::before {
-    top: -10px;
-    left: 0;
-  }
-  .heart::after {
-    top: 0;
-    left: 10px;
-  }
-  @keyframes floatUp {
-    0% {
-      transform: translateY(0) rotate(-45deg);
-      opacity: 0.9;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feliz 19 Jessy 💖</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background: linear-gradient(to top, #ffccd5, #ffeaf0, #fff);
+      font-family: 'Segoe UI', sans-serif;
     }
-    100% {
-      transform: translateY(-120vh) rotate(-45deg);
+
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 24px;
+      animation: floatUp linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .message-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      animation: fadeIn 3s ease-in-out forwards;
       opacity: 0;
     }
-  }
-</style>
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translate(-50%, -60%) scale(0.9); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    .message-container h1 {
+      font-size: 3em;
+      color: #e91e63;
+      margin-bottom: 0.3em;
+    }
+
+    .message-container p {
+      color: #444;
+      font-size: 1.2em;
+      line-height: 1.5em;
+    }
+  </style>
 </head>
 <body>
+  <div class="message-container">
+    <h1>🎂 Feliz 19 cumpleaños, Jessy 💖</h1>
+    <p>Desde que te conocí con solo 14, supe que eras diferente.</p>
+    <p>El tiempo, la vida, las vueltas del destino…</p>
+    <p>nos alejaron, pero tú sigues siendo una parte hermosa de mi historia.</p>
+    <p>Gracias por existir. 🌠</p>
+  </div>
 
-<div class="message">
-  <h1>Feliz 19 cumpleaños, Jessy 🎂❤️</h1>
-  <p>Desde que te conocí con solo 14, sabía que eras diferente.<br>
-  El tiempo, la vida, las vueltas del destino… nos alejaron, pero tú sigues siendo una parte hermosa de mi historia.</p>
-  <p>Hoy no solo celebras un año más, también celebro yo el haberte conocido.<br>
-  Aunque ya no seamos lo que fuimos, te deseo lo mejor, siempre.<br>
-  Esta paginita es solo una forma bonita de decir:<br>
-  Gracias por haber existido en mi vida 💖</p>
-  <p style="margin-top: 2rem;">— Niarkin 🌙</p>
-</div>
+  <script>
+    const numHearts = 60;
 
-<script>
-  // Crear estrellas aleatorias
-  const starCount = 100;
-  for(let i = 0; i < starCount; i++) {
-    const star = document.createElement('div');
-    star.classList.add('star');
-    const size = Math.random() * 2 + 1;
-    star.style.width = size + 'px';
-    star.style.height = size + 'px';
-    star.style.top = Math.random() * 100 + 'vh';
-    star.style.left = Math.random() * 100 + 'vw';
-    star.style.animationDuration = (2 + Math.random() * 3) + 's';
-    document.body.appendChild(star);
-  }
-
-  // Crear corazones flotantes
-  function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.style.left = Math.random() * window.innerWidth + 'px';
-    const size = 10 + Math.random() * 20;
-    heart.style.width = size + 'px';
-    heart.style.height = size + 'px';
-    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 8000);
-  }
-
-  setInterval(createHeart, 300);
-</script>
-
+    for (let i = 0; i < numHearts; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 7) + 's';
+      heart.style.fontSize = (16 + Math.random() * 40) + 'px';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
 </body>
 </html>
